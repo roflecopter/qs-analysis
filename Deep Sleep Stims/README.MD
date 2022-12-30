@@ -1,4 +1,4 @@
-# [<img src="https://github.com/roflecopter/qs-analysis/blob/main/Deep%20Sleep%20Stims/regression.png">](https://github.com/roflecopter/qs-analysis/)
+# [<img src="https://github.com/roflecopter/qs-analysis/blob/main/Deep%20Sleep%20Stims/regression.png">]()
 
 ```
 Call:
@@ -25,3 +25,4 @@ F-statistic:  12.4 on 1 and 143 DF,  p-value: 0.0005771
 (Intercept)            92.5877661 93.03500637
 Number.of.Stimulations  0.0346501  0.03590891
 ```
+# [<img src="https://github.com/roflecopter/qs-analysis/blob/main/Deep%20Sleep%20Stims/likelyhood.png">]()
