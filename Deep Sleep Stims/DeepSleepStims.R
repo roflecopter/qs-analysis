@@ -84,3 +84,17 @@ print(
           axis.title.x = element_text(face="bold", colour="blue", size = 12),
           axis.title.y = element_text(face="bold", colour="blue", size = 12))
 )
+g.pad <- .05
+
+print(
+  ggplot(data.frame(x = c(ci[1]-g.pad, ci[2]+g.pad)), aes(x = x)) + xlim(ci[1]-g.pad, ci[2]+g.pad) + ylim(0, cdf1(1)) +
+    stat_function(fun = cdf1, geom = "area", fill = "blue", alpha = 0.25) + 
+    stat_function(fun = cdf1) + 
+    geom_text(data = data.frame(x = c(1+g.pad/2),y = c(pdf1(1)/2), l = c(paste0(round(100*(1-cdf1(1)),2),"%"))), aes(x = x, y = y, label = l), size = 6) +
+    geom_text(data = data.frame(x = c(m),y = c(pdf1(m)/2), l = c(paste0(round(100*cdf1(1),2),"%"))), aes(x = x, y = y, label = l), size = 6) +
+    geom_vline(xintercept = 1, color = "orange", size = 1) + 
+    labs(x = "\n x", y = "f(x) \n", title = paste0("Cumulative Prob Function\n", desc, ", ",type,"\n",odds.t)) + 
+    theme(plot.title = element_text(hjust = 0.5), 
+          axis.title.x = element_text(face="bold", colour="blue", size = 12),
+          axis.title.y = element_text(face="bold", colour="blue", size = 12))
+)
