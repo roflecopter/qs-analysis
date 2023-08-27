@@ -24,6 +24,14 @@ describe.data <- function(df, digits = 2) {
   }
 }
 
+radar.graph.oura <- function(df, n.cols, title)
+{
+  areas <- NULL
+  set.seed(7)
+  for(i in 1:nrow(df)) areas <- cbind(areas, rgb(rand(1), rand(1), rand(1), 0.33))
+  library(fmsb)
+  radarchart(df, maxmin = F, title = title, cglty = 2, cglcol = "gray", pcol = 1:n.cols, plwd = 2, pfcol = areas)
+}
 
 ggplotRegression <- function (fit, title = "") {
   
